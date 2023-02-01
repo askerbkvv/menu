@@ -10,3 +10,10 @@ def show_top_menu(context):
         "menu_items": menu_items,
     }
 
+
+@register.simple_tag()
+def show_product(item):
+    product = Products.objects.filter(category=item)
+    return {
+        "product": product,
+    }

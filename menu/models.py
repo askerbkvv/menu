@@ -16,7 +16,7 @@ class Category(models.Model):
 class Menu(models.Model):
     menu = models.CharField("Меню", max_length=100, blank=True, null=True)
     url = models.CharField('Ссылка', max_length=255)
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category, related_name="menu_category")
 
     def __str__(self):
         return self.menu

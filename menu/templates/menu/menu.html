@@ -2,17 +2,7 @@
 <div class="container">
     <ul class="menu">
         {% for m_item in menu_items %}
-            <li><a href="{{ m_item.url }}">{{ m_item.menu }}</a></li>
-{#            {% if m_item.url %}#}
-{#                #}
-{#            {% endif %}#}
-        {% endfor %}
-
-        {% for cat in category %}
-            <li>{{ cat.name }}</li>
-        {% endfor %}
-        {% for prod in products %}
-            <li>{{ prod.title }}</li>
+            <li><a href="{% url 'category' m_item.url %}">{{ m_item.menu }}</a></li>
         {% endfor %}
     </ul>
 </div>
@@ -20,29 +10,3 @@
 
 
 
-
-
-
-
-
-{#{% block content %}#}
-{#    <div class="container">#}
-{#    <h1>Меню и содержимое</h1>#}
-{#        <div class="category">#}
-{#            {% for cat in category %}#}
-{#                <div class="cat">#}
-{#                    <h3>{{ cat.name }}</h3>#}
-{#                </div>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <div class="products">#}
-{#            {% for prod in products %}#}
-{#                <div class="prod">#}
-{#                    <p>{{ prod.title }}</p>#}
-{#                    <p>{{ prod.content }}</p>#}
-{#                    <p>{{ prod.price }}</p>#}
-{#                </div>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#    </div>#}
-{#{% endblock %}#}

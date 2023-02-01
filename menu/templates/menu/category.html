@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load common_tags %}
+
+{% block content %}
+    <div class="container">
+        <h1>Список категории</h1>
+        {% for item in obj.category.all %}
+            <h2>{{ item.name }}</h2>
+
+            <h3>список продуктов</h3>
+            <h6>{% show_product item.id %}</h6>
+<!--    {#      <h2>{{ name }}</h2>#}-->
+        {% endfor %}
+    </div>
+{% endblock %}
