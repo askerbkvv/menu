@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load common_tags %}
+
+{% block content %}
+    <div class="container">
+        <h1>Список меню</h1>
+        {{ block.super }}
+        <h2>{% show_top_menu %}</h2>
+{#      <h2>{{ name }}</h2>#}
+    </div>
+{% endblock %}
+
